@@ -1,0 +1,30 @@
+* {
+	border: red solid 1px;
+}
+#elementThis {
+	text-align: center;
+	font-family: monospace;
+	font-size: 24px;
+}
+#textSize {
+	text-align: center;
+	width: 500px;
+	height: 100px;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	border: 1px solid black;
+}
+#textSize p {
+	padding: 20px;
+}
+#textSizeButtons {
+	text-align: center;
+}
+#textSizeButtons input {
+	max-width: 30px;
+	margin: 0 auto;
+	text-align: center;
+}
