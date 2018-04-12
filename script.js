@@ -1,7 +1,7 @@
 window.onload = function() {
 
-
 	//zadanie 1
+
 	const test = document.getElementById('test');
 	const elementThis = document.getElementById('elementThis'); 
 	const textSize = document.getElementById('textSize');
@@ -52,6 +52,7 @@ window.onload = function() {
 	buttonMinus.addEventListener('click', fontSizeMinus);
 
 	//zadanie 2
+
 	const clientXid = document.getElementById('clientXid');
 	const shiftKeyId = document.getElementById('shiftKeyId');
 	const mouseButtonsId = document.getElementById('mouseButtonsId');
@@ -61,9 +62,13 @@ window.onload = function() {
 	}
 	function eventShiftKey(event) {
 		eventDisplay.value = event.shiftKey;
+		if(event.shiftKey) {
+			eventDisplay.value = 'SHIFT: active';
+		} else {
+			eventDisplay.value = 'SHIFT: passive';
+		}
 	}
 	function eventButtonMouse(event) {
-
 		eventDisplay.value = event.button;
 		if(event.button === 0) {
 			eventDisplay.value = 'Left mouse button';
