@@ -56,6 +56,8 @@ window.onload = function() {
 	const clientXid = document.getElementById('clientXid');
 	const shiftKeyId = document.getElementById('shiftKeyId');
 	const mouseButtonsId = document.getElementById('mouseButtonsId');
+	const eTarget = document.getElementById('eTarget');
+	const eventList = document.querySelectorAll('ul');
 
 	function eventClientX(event) {
 		eventDisplay.value = event.clientX;
@@ -78,10 +80,18 @@ window.onload = function() {
 			eventDisplay.value = 'Middle mouse button';
 		}
 	}
+	function eventTarget() {
+		eventDisplay.value = event.target.tagName;
+	}
+	function pointerList() {
+		this.style.cursor = 'pointer';
+	}
 
 	clientXid.addEventListener('mousemove', eventClientX);
 	shiftKeyId.addEventListener('mousemove', eventShiftKey);
 	mouseButtonsId.addEventListener('mousedown', eventButtonMouse);
+	eTarget.addEventListener('click', eventTarget);
+	eventList[0].addEventListener('mouseover', pointerList);
 }
 
 
