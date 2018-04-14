@@ -73,13 +73,13 @@ window.onload = function() {
 	}
 	function eventButtonMouse(event) {
 		eventDisplay.value = event.button;
+		mouseButtonsId.oncontextmenu = function(e) {
+				e.preventDefault();
+			}
 		if(event.button === 0) {
 			eventDisplay.value = 'Left mouse button';
 		} else if (event.button === 2) {
 			eventDisplay.value = 'Right mouse button';
-			mouseButtonsId.oncontextmenu = function(e) {
-				e.preventDefault();
-			}
 		} else {
 			eventDisplay.value = 'Middle mouse button';
 		}
@@ -103,23 +103,30 @@ window.onload = function() {
 	const addText = document.getElementById('addText');
 	const addButton = document.querySelector("#formExercise3 input[type='submit']");
 	const addedTextList = document.getElementById('addedTextList');
+	const exercise3 = document.getElementById('exercise3');
+	const deleteInfo = document.createElement('p');
+
+	deleteInfo.innerHTML = '* kliknij aby usunąć';
 
 	function remove() {
 		this.parentNode.removeChild(this);
 	}
 
-	addButton.onclick = function(event) {
+	addButton.onclick = event => {
 		event.preventDefault();
 		const newLi = document.createElement('li');
 		newLi.className = 'newLi';
 		addedTextList.appendChild(newLi);
-		newLi.innerText = addText.value;
+		newLi.innerText = '*' + addText.value;
 		if(addText.value == '') {
-			newLi.innerText = 'brak nazwy';
+			newLi.innerText = '* brak nazwy';
 		}
 		newLi.onclick = remove;
 		addText.value = '';
 	}
+
+	exercise3.appendChild(deleteInfo);
+
 	
 
 
