@@ -105,6 +105,7 @@ window.onload = function() {
 	const addedTextList = document.getElementById('addedTextList');
 	const exercise3 = document.getElementById('exercise3');
 	const deleteInfo = document.createElement('p');
+	const LiElements = document.getElementsByClassName('newLi');
 
 	deleteInfo.innerHTML = '* kliknij aby usunąć';
 
@@ -115,16 +116,15 @@ window.onload = function() {
 	addButton.onclick = event => {
 		event.preventDefault();
 		const newLi = document.createElement('li');
-		newLi.className = 'newLi';
 		addedTextList.appendChild(newLi);
 		newLi.innerText = '*' + addText.value;
 		if(addText.value == '') {
 			newLi.innerText = '* brak nazwy';
 		}
+		newLi.setAttribute('style', 'cursor: pointer');
 		newLi.onclick = remove;
 		addText.value = '';
 	}
-
 	exercise3.appendChild(deleteInfo);
 
 	
