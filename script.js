@@ -3,7 +3,6 @@ window.onload = function() {
 	//zadanie 1
 
 	const test = document.getElementById('test');
-	const elementThis = document.getElementById('elementThis'); 
 	const textSize = document.getElementById('textSize');
 	const textSizeButtons = document.getElementById('textSizeButtons');
 	const pxDisplay = document.createElement('input');
@@ -22,10 +21,12 @@ window.onload = function() {
 		alert('Ejjj!!!!')
 	}
 	function changeColor() {
-		if (this.style.color == 'black') {
-			this.style.color = 'red';
+		if (this.style.background == 'none') {
+			this.style.background = 'black';
+			this.style.color = 'white';
 		} else {
 			this.style.color = 'black';
+			this.style.background = 'none';
 		}
 	}
 	function fontSizePlus() {
@@ -46,8 +47,8 @@ window.onload = function() {
 			return;
 		} 
 	}
-	elementThis.onclick = answer;
-	elementThis.onmouseover = changeColor;
+	textSize.onclick = answer;
+	textSize.onmouseover = changeColor;
 	buttonPlus.addEventListener('click', fontSizePlus);
 	buttonMinus.addEventListener('click', fontSizeMinus);
 
@@ -76,6 +77,9 @@ window.onload = function() {
 			eventDisplay.value = 'Left mouse button';
 		} else if (event.button === 2) {
 			eventDisplay.value = 'Right mouse button';
+			mouseButtonsId.oncontextmenu = function(e) {
+				e.preventDefault();
+			}
 		} else {
 			eventDisplay.value = 'Middle mouse button';
 		}
@@ -93,6 +97,33 @@ window.onload = function() {
 	eTarget.addEventListener('click', eventTarget);
 	eventList[0].addEventListener('mouseover', pointerList);
 }
+
+//Zadanie 3
+	
+	const addText = document.getElementById('addText');
+	const addButton = document.querySelector("#formExercise3 input[type='submit']");
+	const addedTextList = document.getElementById('addedTextList');
+
+	function remove() {
+		this.parentNode.removeChild(this);
+	}
+
+	addButton.onclick = function(event) {
+		event.preventDefault();
+		const newLi = document.createElement('li');
+		newLi.className = 'newLi';
+		addedTextList.appendChild(newLi);
+		newLi.innerText = addText.value;
+		if(addText.value == '') {
+			newLi.innerText = 'brak nazwy';
+		}
+		newLi.onclick = remove;
+		addText.value = '';
+	}
+	
+
+
+	
 
 
 

@@ -3,30 +3,43 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title></title>
+	<title>JS Exercise</title>
 </head>
 <body>
 	<div id='exercise1'>
 		<h1>Zadanie 1.</h1>
-	<div id ='elementThis'>
-		<h3>Po najechaniu na ten tekst nastepuje przypisanie określonego koloru stylu . Dodatkowo sprawdziłem wywołanie funcji onclick.</h3>
-	</div>
-	<div id='textSize'>
-		<p>Klikając na przyciski + , - zwiększamy bądź zmniejszamy czcionkę tego tekstu.</p>
-	</div>
-	<div id='textSizeButtons'></div>
+		<div id ='elementThis'>
+			<h3>Po najechaniu na poniższy tekst nastepuje przypisanie określonej klasy. Dodatkowo sprawdziłem wywołanie funcji onclick.</h3>
+		</div>
+		<div id='textSize'>
+			<p>* klikając na przyciski + , - zwiększamy bądź zmniejszamy czcionkę tego tekstu.</p>
+		</div>
+		<div id='textSizeButtons'></div>
 	</div>
 
 	<div id='exercise2'>
 		<h1>Zadanie 2.</h1>
 		<input type="" name="display" id='eventDisplay'>
-		<h3>* na elementach listy są wywoływane różne eventy i wyświetlane w powyższym inpucie</h3>
+		<h3>Na elementach listy są wywoływane różne eventy i wyświetlane w powyższym inpucie</h3>
 		<ul>
 			<li id='clientXid'>clientX - mousemove (wartość długości horyzontalnej)</li>
 			<li id='shiftKeyId'>shiftKey - mousemove (reakcja na klawisz 'shift')</li>
 			<li id='mouseButtonsId'>button - mousedown (identyfikacja klawisza myszy)</li>
 			<li id='eTarget'>e.target.tagName - click (identyfikacja tagu)</li> 
 		</ul>
+	</div>
+
+	<div id='exercise3'>
+		<h1>Zadanie 3</h1>
+		<h4>W tym zadaniu zastosowałem preventDefault() w celu anulacji wysyłania informacji przez 					formularz.Funkcja ta została zastąpiona tworzeniem nowego elementu listy.
+		</h4>
+		<form id="formExercise3">
+			treść: 
+			<input type="text" id="addText">
+			<input type="submit" value="dodaj">
+		</form>
+		<ul id="addedTextList"></ul>
+		<p>* kliknij aby usunąć</p>
 	</div>
 
 	<script type="text/javascript" src="script.js"></script>

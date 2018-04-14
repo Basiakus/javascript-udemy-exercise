@@ -5,24 +5,23 @@ body {
 	background-image: url('https://cdn.printablepaper.net/samples/grid-portrait-letter-2-noindex.png');
 	font-size: 20px;
 	font-family: cursive;
+	color: #000F55;
 }
 h1 {
 	color: red;
-	font-size: 2em;
+	font-size: 1.8em;
 	margin-top: 5%;
 	margin-left: 10%;
 	text-align: left;
 }
+h1, h2, h3, h4 {
+	font-family: monospace;
+}
 div[id*='exercise'] {
 	text-align: center;
 }
-#elementThis {
-	font-size: 24px;
-}
 #textSize {
 	overflow: hidden;
-	font-weight: bold;
-	color: red;
 	width: 500px;
 	height: 100px;
 	display: flex;
@@ -71,4 +70,12 @@ Zadanie 2
 	letter-spacing: 2px;
 	width: 30%;
 	background-color: red;
+}
+/*
+Zadanie 3
+*/
+#exercise3 ul li {
+	list-style-type: none;
+	text-align: left;
+	margin-left: 45%;
 }
