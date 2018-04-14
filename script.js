@@ -29,7 +29,7 @@ window.onload = function() {
 		}
 	}
 	function fontSizePlus() {
-		if (fontSize < 32) {
+		if (fontSize < 52) {
 			fontSize += 1;
 			pxDisplay.value = fontSize + 'px';
 			textSize.style.fontSize = fontSize + 'px';

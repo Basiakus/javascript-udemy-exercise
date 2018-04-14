@@ -1,22 +1,27 @@
 /*
 Zadanie 1 
 */
-
+body {
+	background-image: url('https://cdn.printablepaper.net/samples/grid-portrait-letter-2-noindex.png');
+	font-size: 20px;
+	font-family: cursive;
+}
 h1 {
-	font-size: 3em;
+	color: red;
+	font-size: 2em;
 	margin-top: 5%;
 	margin-left: 10%;
 	text-align: left;
-	text-decoration: underline;
 }
 div[id*='exercise'] {
-	font-family: monospace;
 	text-align: center;
 }
 #elementThis {
 	font-size: 24px;
 }
 #textSize {
+	overflow: hidden;
+	font-weight: bold;
 	color: red;
 	width: 500px;
 	height: 100px;
@@ -26,6 +31,7 @@ div[id*='exercise'] {
 	margin: 0 auto;
 	border: 3px solid black;
 	border-radius: 5px;
+	margin-bottom: 5px;
 }
 #textSize p {
 	padding: 5px;
@@ -42,7 +48,6 @@ div[id*='exercise'] {
 Zadanie 2 
 */
 #exercise2 {
-	font-family: monospace;
 	text-align: center;
 }
 #exercise2 li {
@@ -54,13 +59,16 @@ Zadanie 2
 	font-size: 1.2em;
 }
 #exercise2 input {
+	padding: 1%;
+	color: white;
 	border: 1px solid red;
-	border-radius: 2px;
+	border-radius: 4px;
 	margin: 5 auto;
 	text-align: center;
 	text-transform: uppercase;
 	font-weight: bold;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	letter-spacing: 2px;
 	width: 30%;
+	background-color: red;
 }
