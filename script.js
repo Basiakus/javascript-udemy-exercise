@@ -96,9 +96,8 @@ window.onload = function() {
 	mouseButtonsId.addEventListener('mousedown', eventButtonMouse);
 	eTarget.addEventListener('click', eventTarget);
 	eventList[0].addEventListener('mouseover', pointerList);
-}
 
-//Zadanie 3
+	//Zadanie 3
 	
 	const addText = document.getElementById('addText');
 	const addButton = document.querySelector("#formExercise3 input[type='submit']");
@@ -112,8 +111,7 @@ window.onload = function() {
 	function remove() {
 		this.parentNode.removeChild(this);
 	}
-
-	addButton.onclick = event => {
+	function addLiElement(event) {
 		event.preventDefault();
 		const newLi = document.createElement('li');
 		addedTextList.appendChild(newLi);
@@ -122,10 +120,36 @@ window.onload = function() {
 			newLi.innerText = '* brak nazwy';
 		}
 		newLi.setAttribute('style', 'cursor: pointer');
+		newLi.style.width = '10%';
 		newLi.onclick = remove;
 		addText.value = '';
 	}
+
+	addButton.addEventListener('click', addLiElement);
 	exercise3.appendChild(deleteInfo);
+
+	//Zadanie 4
+	const buttonToTop = document.getElementById('buttonToTop');
+	const span = document.getElementById('yAxisDisplay');
+
+	function scrollToTop() {
+		window.scrollBy(0, -1 * window.pageYOffset);
+	}
+	window.onscroll = function() {
+		const Yoffset = window.pageYOffset;
+		span.innerHTML = 'Yaxis:' + parseInt(Yoffset);
+		if(Yoffset > 600 && Yoffset < 800) {
+			buttonToTop.style.display = 'block'; 
+		} else {
+			buttonToTop.style.display = 'none';
+		}
+	}
+	buttonToTop.addEventListener('click', scrollToTop);
+
+
+} //end of widdow.onload
+
+
 
 	
 

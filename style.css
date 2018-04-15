@@ -79,3 +79,35 @@ Zadanie 3
 	text-align: left;
 	margin-left: 45%;
 }
+/*
+Zadanie 4
+*/
+#buttonToTop {
+	font-family: monospace;
+	text-align: left;
+	display: block;
+	min-width: 2%;
+	position: fixed;
+	bottom: 10%;
+	right: 20%;
+	background-color: black;
+	color: red;
+	border-radius: 5px;
+	transition: .3s;
+	padding: 15px;
+}
+#buttonToTop:hover {
+	background-color: red;
+	color: black;
+
+}
+#exercise4 h4 {
+	width: 50%;
+}
+#yAxisDisplay {
+ font-size: .8em;
+ font-family: monospace;
+ text-transform: uppercase;
+ text-align: right;
+ margin-left: 20%;
+}
