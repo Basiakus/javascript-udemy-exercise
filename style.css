@@ -111,3 +111,12 @@ Zadanie 4
  text-align: right;
  margin-left: 20%;
 }
+/*
+Zadanie 5
+*/
+#movingElement {
+	position: absolute;
+	display: block;
+	width: 150px;
+	height: 150px;
+}

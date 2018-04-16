@@ -61,7 +61,7 @@ window.onload = function() {
 	const eventList = document.querySelectorAll('ul');
 
 	function eventClientX(event) {
-		eventDisplay.value = event.clientX;
+		eventDisplay.value = event.clientY;
 	}
 	function eventShiftKey(event) {
 		eventDisplay.value = event.shiftKey;
@@ -91,7 +91,7 @@ window.onload = function() {
 		this.style.cursor = 'pointer';
 	}
 
-	clientXid.addEventListener('mousemove', eventClientX);
+	clientXid.onmousemove = eventClientX;
 	shiftKeyId.addEventListener('mousemove', eventShiftKey);
 	mouseButtonsId.addEventListener('mousedown', eventButtonMouse);
 	eTarget.addEventListener('click', eventTarget);
@@ -133,12 +133,12 @@ window.onload = function() {
 	const span = document.getElementById('yAxisDisplay');
 
 	function scrollToTop() {
-		window.scrollBy(0, -1 * window.pageYOffset);
+		return window.scrollBy(0, -1 * window.pageYOffset);
 	}
 	window.onscroll = function() {
 		const Yoffset = window.pageYOffset;
 		span.innerHTML = 'Yaxis:' + parseInt(Yoffset);
-		if(Yoffset > 600 && Yoffset < 800) {
+		if(Yoffset > 600 && Yoffset < 1000) {
 			buttonToTop.style.display = 'block'; 
 		} else {
 			buttonToTop.style.display = 'none';
@@ -146,8 +146,24 @@ window.onload = function() {
 	}
 	buttonToTop.addEventListener('click', scrollToTop);
 
+	//zadanie 5
+	const exercise5 = document.getElementById('exercise5');
+	const movingElement = document.getElementById('movingElement');
 
-} //end of widdow.onload
+	movingElement.onmousedown = function() {
+			
+		movingElement.onmousemove = function(e) {
+			this.style.left = e.clientX - this.width / 2 + 'px';
+			this.style.top = e.clientY - this.height / 2 + window.pageYOffset + 'px';
+		};
+	};	
+	movingElement.onmouseup = function() {
+		this.onmousemove = null;
+	};
+	movingElement.ondragstart = function(e) {
+		e.preventDefault();
+	}
+}; //end of widdow.onload
 
 
 
