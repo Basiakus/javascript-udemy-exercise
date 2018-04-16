@@ -155,10 +155,17 @@ window.onload = function() {
 		movingElement.onmousemove = function(e) {
 			this.style.left = e.clientX - this.width / 2 + 'px';
 			this.style.top = e.clientY - this.height / 2 + window.pageYOffset + 'px';
+			this.style.width = '110px';
+			this.style.height = '80px';
+			this.style.filter = 'blur(3px)';
 		};
 	};	
 	movingElement.onmouseup = function() {
 		this.onmousemove = null;
+		this.style.width = '100px';
+		this.style.height = '100px';
+		this.style.filter = 'none';
+
 	};
 	movingElement.ondragstart = function(e) {
 		e.preventDefault();
