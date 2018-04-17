@@ -138,7 +138,7 @@ window.onload = function() {
 	window.onscroll = function() {
 		const Yoffset = window.pageYOffset;
 		span.innerHTML = 'Yaxis:' + parseInt(Yoffset);
-		if(Yoffset > 600 && Yoffset < 1000) {
+		if(Yoffset > 600 && Yoffset < 880) {
 			buttonToTop.style.display = 'block'; 
 		} else {
 			buttonToTop.style.display = 'none';
@@ -170,6 +170,26 @@ window.onload = function() {
 	movingElement.ondragstart = function(e) {
 		e.preventDefault();
 	}
+
+	//Zadanie 6
+
+	const baseNumber = document.getElementById('baseNumber');
+	const turnOnStoper = document.getElementById('turnOnStoper');
+	const turnOffStoper = document.getElementById('turnOffStoper');
+
+	const stoperHandler  = document.getElementById('stoperHandler');
+	
+	function stopWatch(display, number) {
+		display.innerHTML = number--;
+	};
+	turnOnStoper.onclick = function() {
+		
+		setInterval(function() {
+			stoperHandler.innerHTML = baseNumber.value--;
+		}, 1000);
+	};
+	
+	
 }; //end of widdow.onload
 
 
