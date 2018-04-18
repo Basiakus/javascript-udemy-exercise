@@ -173,25 +173,25 @@ window.onload = function() {
 
 	//Zadanie 6
 
-	const userValue = document.getElementById('userValue');
+	//const userValue = document.getElementById('userValue');
 	const startStoper = document.getElementById('startStoper');
-	const stopStoper = document.getElementById('stoptStoper');
+	const stopStoper = document.getElementById('stopStoper');
 	const displayCountdown = document.getElementById('displayCountdown');
-
+	let innerInterval;
 	function interval(display, number) {
 	   let innerInterval = setInterval(function() {
 	      if(number.value < 0) {
 	         clearInterval(innerInterval);
-	         return innerInterval;
+	         return;
 	      }
 	      display.innerHTML = number.value--;         
 	   },1000);
 	   return innerInterval;
 	};
-	let innerInterval;
+	
 	startStoper.onclick = function() {
-	   //const userValue = document.getElementById('userValue');
-	   //displayCountdown.innerHTML = userValue.value;
+	   const userValue = document.getElementById('userValue');
+	   displayCountdown.innerHTML = userValue.value;
 	   innerInterval = interval(displayCountdown, userValue);
 	};
 

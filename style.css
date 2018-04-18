@@ -123,12 +123,47 @@ Zadanie 5
 /*
 Zadanie 6
 */
-#baseValue {
-
+#stoper {
+	position: relative;
+	margin: 0 auto;
+	width: 200px;
+	height: 150px;
+	border-radius: 30%;
+	background-color: grey;
+	text-align: center;
 }
-#turnOnStoper {
-
+#displayCountdown {
+	box-sizing: border-box;
+	background-color: #63744b;
+	text-align: right;
+	min-width: 80%;
+	display: inline-block;
+	position: relative;
+	height: 30%;
+	margin: 0 auto;
+	margin-top: 25%;
+	padding: 20px;
+	color: black;
+	text-transform: uppercase;
+	font-family: Orbitron, sans-serif;
+	border-radius: 4px;
 }
-#turnOffStoper {
-	
+#startStoper, #stopStoper {
+	text-decoration: none;
+	padding: 10px 3px;
+	position: absolute;
+	background-color: gray;
+	color: white;
+	border-color: none;
+	text-decoration: none;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+#startStoper {
+	left: 0;
+	transform: rotate(-45deg);
+}
+#stopStoper {
+	right: 0;
+	transform: rotate(45deg);
 }
