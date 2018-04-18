@@ -173,23 +173,32 @@ window.onload = function() {
 
 	//Zadanie 6
 
-	const baseNumber = document.getElementById('baseNumber');
-	const turnOnStoper = document.getElementById('turnOnStoper');
-	const turnOffStoper = document.getElementById('turnOffStoper');
+	const userValue = document.getElementById('userValue');
+	const startStoper = document.getElementById('startStoper');
+	const stopStoper = document.getElementById('stoptStoper');
+	const displayCountdown = document.getElementById('displayCountdown');
 
-	const stoperHandler  = document.getElementById('stoperHandler');
-	
-	function stopWatch(display, number) {
-		display.innerHTML = number--;
+	function interval(display, number) {
+	   let innerInterval = setInterval(function() {
+	      if(number.value < 0) {
+	         clearInterval(innerInterval);
+	         return innerInterval;
+	      }
+	      display.innerHTML = number.value--;         
+	   },1000);
+	   return innerInterval;
 	};
-	turnOnStoper.onclick = function() {
-		
-		setInterval(function() {
-			stoperHandler.innerHTML = baseNumber.value--;
-		}, 1000);
+	let innerInterval;
+	startStoper.onclick = function() {
+	   //const userValue = document.getElementById('userValue');
+	   //displayCountdown.innerHTML = userValue.value;
+	   innerInterval = interval(displayCountdown, userValue);
 	};
-	
-	
+
+	stopStoper.onclick = function() {
+	   clearInterval(innerInterval);
+	};
+
 }; //end of widdow.onload
 
 
