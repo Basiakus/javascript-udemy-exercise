@@ -178,6 +178,7 @@ window.onload = function() {
 	const stopStoper = document.getElementById('stopStoper');
 	const displayCountdown = document.getElementById('displayCountdown');
 	let innerInterval;
+	
 	function interval(display, number) {
 	   let innerInterval = setInterval(function() {
 	      if(number.value < 0) {
@@ -190,6 +191,9 @@ window.onload = function() {
 	};
 	
 	startStoper.onclick = function() {
+		if(innerInterval) {
+			return;
+		};
 	   const userValue = document.getElementById('userValue');
 	   displayCountdown.innerHTML = userValue.value;
 	   innerInterval = interval(displayCountdown, userValue);
