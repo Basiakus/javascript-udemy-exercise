@@ -169,14 +169,87 @@ window.onload = function() {
 	};
 	movingElement.ondragstart = function(e) {
 		e.preventDefault();
-	}
+	};
 
 	//Zadanie 6
 
+	
+
+	const startStoperButton = document.getElementById('startStoperButton');
+	const stopStoperButton = document.getElementById('stopStoperButton');
+	const continueStoperButton = document.getElementById('continueStoperButton');
+	const saveStoperButton = document.getElementById('saveStoperButton');
+	const displayStoper = document.getElementById('displayStoper');
+	const stoperList = document.getElementById('stoperList');
 	//const userValue = document.getElementById('userValue');
-	const startStoper = document.getElementById('startStoper');
-	const stopStoper = document.getElementById('stopStoper');
-	const displayCountdown = document.getElementById('displayCountdown');
+
+	// Z wykorzystaniem obiektu klasy
+	function Stoper(display) {
+
+		this.display = display;
+		this.basicValue; 
+		this.setTimeoutReference;
+		this.clearReference;
+
+		this.setBasicValue = function(basicValue) {
+			if(this.setTimeoutReference) {
+				this.stop();
+			};
+
+			this.basicValue = basicValue;
+			this.start(this.basicValue);
+		};
+
+		this.start = function() {
+			if(this.basicValue < 0) {
+				return;
+			};
+			display.innerHTML = this.basicValue--;
+			const self = this;
+			this.setTimeoutReference = setTimeout(function() {
+				self.start();
+			}, 1000);
+		};
+		this.stop = function() {
+			this.clearReference = clearTimeout(this.setTimeoutReference);
+		};
+		this.continue = function() {
+			this.start();	
+		};
+	};
+
+	const stoper = new Stoper(displayStoper);
+
+	startStoperButton.onclick = function() {
+		const userValue = document.getElementById('userValue');
+		stoper.setBasicValue(userValue.value);
+	};
+
+	stopStoperButton.onclick = function() {
+		stoper.stop();
+	};
+		
+	continueStoperButton.onclick = function() {
+		stoper.continue();
+	};
+	saveStoperButton.onclick = function() {
+		const newRecord = document.createElement('li');
+		const length = document.querySelectorAll('#stoperList li');
+		stoperList.appendChild(newRecord);
+		for (let i = 0; i <= length.length; ++i) {
+			newRecord.innerHTML = i + "# " + displayStoper.innerHTML;
+		};
+		newRecord.onclick = function() {
+			this.parentNode.removeChild(this);
+		};
+		
+		console.log(length.length);
+	};
+	
+
+
+
+	/* Z WYKORZYSTANIEM setInterval
 	let innerInterval;
 	
 	function interval(display, number) {
@@ -190,18 +263,17 @@ window.onload = function() {
 	   return innerInterval;
 	};
 	
-	startStoper.onclick = function() {
-		if(innerInterval) {
-			return;
-		};
+	startStoperButton.onclick = function() {
 	   const userValue = document.getElementById('userValue');
-	   displayCountdown.innerHTML = userValue.value;
-	   innerInterval = interval(displayCountdown, userValue);
+	   displayStoper.innerHTML = userValue.value;
+	   innerInterval = interval(displayStoper, userValue);
 	};
 
-	stopStoper.onclick = function() {
+	stopStoperButton.onclick = function() {
 	   clearInterval(innerInterval);
 	};
+	*/
+	// 
 
 }; //end of widdow.onload
 
