@@ -181,6 +181,7 @@ window.onload = function() {
 	const saveStoperButton = document.getElementById('saveStoperButton');
 	const displayStoper = document.getElementById('displayStoper');
 	const stoperList = document.getElementById('stoperList');
+	const statusDisplay = document.getElementById('statusDisplay');
 	//const userValue = document.getElementById('userValue');
 
 	// Z wykorzystaniem obiektu klasy
@@ -190,6 +191,7 @@ window.onload = function() {
 		this.basicValue; 
 		this.setTimeoutReference;
 		this.clearReference;
+		this.status;
 
 		this.setBasicValue = function(basicValue) {
 			if(this.setTimeoutReference) {
@@ -204,17 +206,28 @@ window.onload = function() {
 			if(this.basicValue < 0) {
 				return;
 			};
+			this.status = true;
+			statusDisplay.innerHTML = this.status;
 			display.innerHTML = this.basicValue--;
 			const self = this;
 			this.setTimeoutReference = setTimeout(function() {
 				self.start();
 			}, 1000);
+			return this.status;
 		};
 		this.stop = function() {
+			this.status = false;
+			statusDisplay.innerHTML = this.status;
 			this.clearReference = clearTimeout(this.setTimeoutReference);
+			return this.status;
 		};
 		this.continue = function() {
-			this.start();	
+			const self = this;
+			if(!this.status) {
+				this.start(); 
+			} else {
+				return;
+			};
 		};
 	};
 
@@ -242,8 +255,6 @@ window.onload = function() {
 		newRecord.onclick = function() {
 			this.parentNode.removeChild(this);
 		};
-		
-		console.log(length.length);
 	};
 	
 
