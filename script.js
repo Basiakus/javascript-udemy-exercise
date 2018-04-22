@@ -282,18 +282,19 @@ window.onload = function() {
 	function isNumber(valueToCheck) {
 		return !isNaN(valueToCheck);
 	};
-	exercise7numbers.onkeyup = function(e) {
+	exercise7numbers.onkeyup = function() {
 		if(isNumber(this.value)) {
 			this.style.backgroundColor = 'green';
 		} else {
 			this.style.backgroundColor = 'red';
 		};
 	};
-	exercise7Letters.onkeyup = function(e) {
-		if(!isNumber(this.value)) {
-			this.style.backgroundColor = 'green';
+	exercise7Letters.onkeydown = function(e) {
+		const which = e.which;
+		if(isNumber(String.fromCharCode(which))) {
+			e.preventDefault();
 		} else {
-			this.style.backgroundColor = 'red';
+			this.style.backgroundColor = 'green';
 		};
 	};
 
