@@ -276,6 +276,7 @@ window.onload = function() {
 //Zadanie 7
 	const exercise7numbers = document.getElementById('exercise7Form').numbers;
 	const exercise7Letters = document.getElementById('exercise7Form').letters;
+	const exercise7FullName = document.getElementById('exercise7Form').fullName;
 	const exercise7Send = document.getElementById('exercise7Form').send;
 	const exercise7Content = document.getElementById('exercise7Content');
 	
@@ -295,6 +296,13 @@ window.onload = function() {
 			e.preventDefault();
 		} else {
 			this.style.backgroundColor = 'green';
+		};
+	};
+	exercise7Send.onclick = function(e) {
+		const checkName = exercise7FullName.value;
+		if(checkName.indexOf(' ') < 0) {
+			e.preventDefault();
+			exercise7FullName.value = 'Podaj imię i nazwisko';
 		};
 	};
 
