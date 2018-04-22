@@ -1,5 +1,7 @@
-/*
-Zadanie 1 
+
+/* {
+	border: 1px solid red;
+};
 */
 body {
 	background-image: url('https://cdn.printablepaper.net/samples/grid-portrait-letter-2-noindex.png');
@@ -20,6 +22,9 @@ h1, h2, h3, h4 {
 div[id*='exercise'] {
 	text-align: center;
 }
+/*
+Zadanie 1 
+*/
 #textSize {
 	overflow: hidden;
 	width: 500px;
@@ -119,55 +124,9 @@ Zadanie 5
 	display: block;
 	width: 100px;
 	height: 100px;
+	left: 45%;
 }
 /*
-Zadanie 6
-
-#stoper {
-	position: relative;
-	margin: 0 auto;
-	width: 200px;
-	height: 150px;
-	border-radius: 30%;
-	background-color: grey;
-	text-align: center;
-}
-#displayStoper {
-	box-sizing: border-box;
-	background-color: #63744b;
-	text-align: right;
-	min-width: 80%;
-	display: inline-block;
-	position: relative;
-	height: 30%;
-	margin: 0 auto;
-	margin-top: 25%;
-	padding: 20px;
-	color: black;
-	text-transform: uppercase;
-	font-family: Orbitron, sans-serif;
-	border-radius: 4px;
-}
-#startStoper, #stopStoper {
-	text-decoration: none;
-	padding: 10px 3px;
-	position: absolute;
-	background-color: gray;
-	color: white;
-	border-color: none;
-	text-decoration: none;
-	border-radius: 5px;
-	text-transform: uppercase;
-}
-#startStoper {
-	left: 0;
-	transform: rotate(-45deg);
-}
-#stopStoper {
-	right: 0;
-	transform: rotate(45deg);
-}
-#userValue {
-	margin-bottom: 20px;
-}
+Zadanie 7
 */
+

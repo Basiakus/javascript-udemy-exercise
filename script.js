@@ -1,7 +1,6 @@
 window.onload = function() {
 
-	//zadanie 1
-
+//zadanie 1
 	const test = document.getElementById('test');
 	const textSize = document.getElementById('textSize');
 	const textSizeButtons = document.getElementById('textSizeButtons');
@@ -52,8 +51,7 @@ window.onload = function() {
 	buttonPlus.addEventListener('click', fontSizePlus);
 	buttonMinus.addEventListener('click', fontSizeMinus);
 
-	//zadanie 2
-
+//zadanie 2
 	const clientXid = document.getElementById('clientXid');
 	const shiftKeyId = document.getElementById('shiftKeyId');
 	const mouseButtonsId = document.getElementById('mouseButtonsId');
@@ -97,8 +95,7 @@ window.onload = function() {
 	eTarget.addEventListener('click', eventTarget);
 	eventList[0].addEventListener('mouseover', pointerList);
 
-	//Zadanie 3
-	
+//Zadanie 3	
 	const addText = document.getElementById('addText');
 	const addButton = document.querySelector("#formExercise3 input[type='submit']");
 	const addedTextList = document.getElementById('addedTextList');
@@ -128,7 +125,7 @@ window.onload = function() {
 	addButton.addEventListener('click', addLiElement);
 	exercise3.appendChild(deleteInfo);
 
-	//Zadanie 4
+//Zadanie 4
 	const buttonToTop = document.getElementById('buttonToTop');
 	const span = document.getElementById('yAxisDisplay');
 
@@ -146,7 +143,7 @@ window.onload = function() {
 	}
 	buttonToTop.addEventListener('click', scrollToTop);
 
-	//zadanie 5
+//zadanie 5
 	const exercise5 = document.getElementById('exercise5');
 	const movingElement = document.getElementById('movingElement');
 
@@ -171,10 +168,7 @@ window.onload = function() {
 		e.preventDefault();
 	};
 
-	//Zadanie 6
-
-	
-
+//Zadanie 6
 	const startStoperButton = document.getElementById('startStoperButton');
 	const stopStoperButton = document.getElementById('stopStoperButton');
 	const continueStoperButton = document.getElementById('continueStoperButton');
@@ -190,7 +184,6 @@ window.onload = function() {
 		this.display = display;
 		this.basicValue; 
 		this.setTimeoutReference;
-		this.clearReference;
 		this.status;
 
 		this.setBasicValue = function(basicValue) {
@@ -207,7 +200,7 @@ window.onload = function() {
 				return;
 			};
 			this.status = true;
-			statusDisplay.innerHTML = this.status;
+			statusDisplay.innerHTML = '&#9654'//this.status;
 			display.innerHTML = this.basicValue--;
 			const self = this;
 			this.setTimeoutReference = setTimeout(function() {
@@ -217,12 +210,11 @@ window.onload = function() {
 		};
 		this.stop = function() {
 			this.status = false;
-			statusDisplay.innerHTML = this.status;
-			this.clearReference = clearTimeout(this.setTimeoutReference);
+			statusDisplay.innerHTML = '&#9646&#9646';//this.status;
+			clearTimeout(this.setTimeoutReference);
 			return this.status;
 		};
 		this.continue = function() {
-			const self = this;
 			if(!this.status) {
 				this.start(); 
 			} else {
@@ -256,10 +248,6 @@ window.onload = function() {
 			this.parentNode.removeChild(this);
 		};
 	};
-	
-
-
-
 	/* Z WYKORZYSTANIEM setInterval
 	let innerInterval;
 	
@@ -284,7 +272,32 @@ window.onload = function() {
 	   clearInterval(innerInterval);
 	};
 	*/
-	// 
+
+//Zadanie 7
+	const exercise7numbers = document.getElementById('exercise7Form').numbers;
+	const exercise7Letters = document.getElementById('exercise7Form').letters;
+	const exercise7Send = document.getElementById('exercise7Form').send;
+	const exercise7Content = document.getElementById('exercise7Content');
+	
+	function isNumber(valueToCheck) {
+		return !isNaN(valueToCheck);
+	};
+	exercise7numbers.onkeyup = function(e) {
+		if(isNumber(this.value)) {
+			this.style.backgroundColor = 'green';
+		} else {
+			this.style.backgroundColor = 'red';
+		};
+	};
+	exercise7Letters.onkeyup = function(e) {
+		if(!isNumber(this.value)) {
+			this.style.backgroundColor = 'green';
+		} else {
+			this.style.backgroundColor = 'red';
+		};
+	};
+
+	
 
 }; //end of widdow.onload
 
