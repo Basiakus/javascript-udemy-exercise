@@ -302,7 +302,7 @@ window.onload = function() {
 		const checkName = exercise7FullName.value;
 		if(checkName.indexOf(' ') < 0) {
 			e.preventDefault();
-			exercise7FullName.value = 'Podaj imię i nazwisko';
+			exercise7FullName.value = '!!!Podaj_imię_i_nazwisko!!!';
 		};
 	};
 
