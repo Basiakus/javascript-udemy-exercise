@@ -278,7 +278,6 @@ window.onload = function() {
 	const exercise7Letters = document.getElementById('exercise7Form').letters;
 	const exercise7FullName = document.getElementById('exercise7Form').fullName;
 	const exercise7Send = document.getElementById('exercise7Form').send;
-	const exercise7Content = document.getElementById('exercise7Content');
 	
 	function isNumber(valueToCheck) {
 		return !isNaN(valueToCheck);
@@ -306,7 +305,24 @@ window.onload = function() {
 		};
 	};
 
-	
+//ZADANIE 8
+	const exercise8FormProducts = document.getElementById('exercise8Form').product;
+	const exercise8SubmitButton = document.getElementById('exercise8Form').submitButton;
+	const exercise8Content = document.getElementById('exercise8Content');
+
+	exercise8SubmitButton.onclick = function(e) {
+		e.preventDefault();
+		let checkedProducts = '';
+		for (let i = 0; i < exercise8FormProducts.length; i++) {
+			if(exercise8FormProducts[i].checked) {
+				checkedProducts += exercise8FormProducts[i].value + '<br>';
+			};
+			
+		};
+		exercise8Content.innerHTML = checkedProducts;
+	};
+
+
 
 }; //end of widdow.onload
 
