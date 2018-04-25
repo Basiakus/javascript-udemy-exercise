@@ -309,6 +309,10 @@ window.onload = function() {
 	const exercise8FormProducts = document.getElementById('exercise8Form').product;
 	const exercise8SubmitButton = document.getElementById('exercise8Form').submitButton;
 	const exercise8Content = document.getElementById('exercise8Content');
+	const exercise8clear = document.createElement('button');
+	function exercise8ClearProducts() {
+		exercise8Content.innerHTML = '';
+	};
 
 	exercise8SubmitButton.onclick = function(e) {
 		e.preventDefault();
@@ -320,6 +324,9 @@ window.onload = function() {
 			
 		};
 		exercise8Content.innerHTML = checkedProducts;
+		exercise8Content.appendChild(exercise8clear);
+		exercise8clear.innerHTML = 'clear';
+		exercise8clear.onclick = exercise8ClearProducts;
 	};
 
 
