@@ -308,10 +308,21 @@ window.onload = function() {
 //ZADANIE 8
 	const exercise8FormProducts = document.getElementById('exercise8Form').product;
 	const exercise8SubmitButton = document.getElementById('exercise8Form').submitButton;
+	const exercise8Declarations = document.getElementById('exercise8Form').condicion;
 	const exercise8Content = document.getElementById('exercise8Content');
 	const exercise8clear = document.createElement('button');
+
+	exercise8SubmitButton.value = 'akceptuję i kupuję';
+
 	function exercise8ClearProducts() {
 		exercise8Content.innerHTML = '';
+	};
+
+	for(let i = 0; i < exercise8Declarations.length; i++) {
+		console.log(exercise8Declarations[i].value)
+		exercise8Declarations[i].onclick = function() {
+			exercise8SubmitButton.disabled = this.value === 'true';
+		};
 	};
 
 	exercise8SubmitButton.onclick = function(e) {
@@ -328,6 +339,7 @@ window.onload = function() {
 		exercise8clear.innerHTML = 'clear';
 		exercise8clear.onclick = exercise8ClearProducts;
 	};
+
 
 
 
