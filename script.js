@@ -302,6 +302,9 @@ window.onload = function() {
 		if(checkName.indexOf(' ') < 0) {
 			e.preventDefault();
 			exercise7FullName.value = '!!!Podaj_imię_i_nazwisko!!!';
+		} else {
+			e.preventDefault();
+			exercise7FullName.value = 'Brawo poszło!:D';
 		};
 	};
 
