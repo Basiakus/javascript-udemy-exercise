@@ -322,7 +322,7 @@ window.onload = function() {
 	};
 
 	for(let i = 0; i < exercise8Declarations.length; i++) {
-		console.log(exercise8Declarations[i].value)
+		//console.log(exercise8Declarations[i].value)
 		exercise8Declarations[i].onclick = function() {
 			exercise8SubmitButton.disabled = this.value === 'true';
 		};
@@ -343,6 +343,18 @@ window.onload = function() {
 		exercise8clear.onclick = exercise8ClearProducts;
 	};
 
+//ZADANIE 9
+	
+	const exercise9Form = document.getElementById('exercise9Form');
+	const exercise9Content = document.getElementById('exercise9Content');
+
+	exercise9Form.sex.onchange = function() {
+		if(this.value ==='women') {
+			exercise9Content.innerHTML ='<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Aiga_toiletsq_women_inv.svg/220px-Aiga_toiletsq_women_inv.svg.png" height="100" width="100">'
+		} else if (this.value === 'men') {
+			exercise9Content.innerHTML = '<img src="https://cdn0.iconfinder.com/data/icons/cosmo-navigation/40/human-256.png" height="100" width="100">';
+		};
+	};
 
 
 
