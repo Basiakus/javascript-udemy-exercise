@@ -59,7 +59,7 @@ window.onload = function() {
 	const eventList = document.querySelectorAll('ul');
 
 	function eventClientX(event) {
-		eventDisplay.value = event.clientY;
+		eventDisplay.value = event.clientX;
 	}
 	function eventShiftKey(event) {
 		eventDisplay.value = event.shiftKey;
