@@ -356,6 +356,18 @@ window.onload = function() {
 		};
 	};
 
+//ZADANIE 10
+	
+	const userPassword = document.getElementById('exer10Form').password;
+	const checkPasswordButton = document.getElementById('exer10Form').checkPasswordButton;
+	const exer10Content = document.getElementById('exer10Content');
+	const formula = /^[A-Z]{1}[a-z]{3,5}\*[0-9]/;
+
+	checkPasswordButton.onclick = function(e) {
+		e.preventDefault();
+		exer10Content.innerHTML = formula.test(userPassword.value);
+	};
+
 
 
 }; //end of widdow.onload
