@@ -109,15 +109,16 @@
 
 	<div id="exercise10">
 		<h1>Zadanie 10.</h1>
-		<h4>Podane przez Ciebie hasło musi zawierać:</h4>
-		<ul>
-			<li>Rozpoczynać się ciągiem liter maksymalnie do 6</li>
+		<h4>Podane przez Ciebie hasło musi:</h4>
+		<ul id="exercise10List">
+			<li>Rozpoczynać się ciągiem liter od 2 do 6</li>
 			<li>Pierwsza litera musi być wielką</li>
-			<li>Po ciągu liter musi zawierać od 2 do 4 liczb</li>
+			<li>Po ciągu liter musi zawierać conajmniej 2 liczby</li>
+			<li>Między literami, a liczbami musi znajdować się znak *</li>
 		</ul>
 		<form id="exer10Form">
-			<input type="text" name="password">
-			<input type="submit" name="checkPasswordButton">
+			<input type="password" name="password">
+			<input type="submit" name="checkPasswordButton" value="sprawdź">
 		</form>
 		<div id="exer10Content"></div>
 	</div>

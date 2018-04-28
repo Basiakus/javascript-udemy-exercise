@@ -133,4 +133,15 @@ Zadanie 7
 	display: block;
 	margin: 0 auto;
 }
+/*
+Zadanie 10
+*/
+#exercise10 ul {
+	width: 30%;
+	margin: 0 auto;
+
+}
+#exercise10 li {
+	margin-bottom: 5%;
+}
 

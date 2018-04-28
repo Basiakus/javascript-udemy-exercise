@@ -361,11 +361,20 @@ window.onload = function() {
 	const userPassword = document.getElementById('exer10Form').password;
 	const checkPasswordButton = document.getElementById('exer10Form').checkPasswordButton;
 	const exer10Content = document.getElementById('exer10Content');
-	const formula = /^[A-Z]{1}[a-z]{3,5}\*[0-9]/;
+	const formula = /^[A-Z]{1}[a-z]{3,5}\*[0-9]{2,}/;
 
 	checkPasswordButton.onclick = function(e) {
 		e.preventDefault();
-		exer10Content.innerHTML = formula.test(userPassword.value);
+		if (formula.test(userPassword.value)) {
+
+			exer10Content.innerHTML = 'Hasło: ' + '"' + userPassword.value + '"' + 'jest poprawne!';
+
+		} else {
+
+			exer10Content.innerHTML = 'Hasło: ' + '"' + userPassword.value + '"' + 'jest błędne!';
+
+		};
+		//exer10Content.innerHTML = formula.test(userPassword.value);
 	};
 
 
