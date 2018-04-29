@@ -361,7 +361,7 @@ window.onload = function() {
 	const userPassword = document.getElementById('exer10Form').password;
 	const checkPasswordButton = document.getElementById('exer10Form').checkPasswordButton;
 	const exer10Content = document.getElementById('exer10Content');
-	const formula = /^[A-Z]{1}[a-z]{3,5}\*[0-9]{2,}/;
+	const formula = /^[A-Z]{1}[a-z]{3,5}\*\d{2,4}$/;
 
 	checkPasswordButton.onclick = function(e) {
 		e.preventDefault();
