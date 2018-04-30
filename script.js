@@ -381,7 +381,7 @@ window.onload = function() {
  	const exercise11Content = document.getElementById('exercise11Content');
 
  	const today = new Date();
- 	const birthDate = new Date(today.getTime() - 1000*60*60*24*361.18*31 /*~30,5 lat*/);
+ 	const birthDate = new Date('09/04/1987');
 
  	Date.prototype.getPolishDays = function() {
  		const days = ['Niedziela', 
