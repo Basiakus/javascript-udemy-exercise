@@ -377,7 +377,49 @@ window.onload = function() {
 		//exer10Content.innerHTML = formula.test(userPassword.value);
 	};
 
+//ZADANIE 11
+ 	const exercise11Content = document.getElementById('exercise11Content');
 
+ 	const today = new Date();
+ 	const birthDate = new Date(today.getTime() - 1000*60*60*24*361.18*31 /*~30,5 lat*/);
+
+ 	Date.prototype.getPolishDays = function() {
+ 		const days = ['Niedziela', 
+					  'Poniedziałek', 
+					  'Wtorek', 
+					  'Środa', 
+				      'Czwartek', 
+					  'Piatek',
+					  'Sobota'
+		];
+		return days[this.getDay()];
+ 	};
+ 	Date.prototype.getPolishMonth = function() {
+ 		const months = [
+ 						'Styczeń',
+ 						'Luty',
+ 						'Marzec',
+ 						'Kwiecień',
+ 						'Maj',
+ 						'Czerwiec',
+ 						'Lipiec',
+ 						'Sierpień',
+ 						'Wrzesień',
+ 						'Październik',
+ 						'Listopad',
+ 						'Grudzień'
+ 		];
+ 		return months[this.getMonth()];
+ 	};
+ 	function lifeTime(birth, now) {
+ 		return parseInt((now - birth)/1000/60/60/24); //dni
+ 	};
+ 	exercise11Content.innerHTML =
+ 								'czas rozpoczęcia wizyty: ' + today.toLocaleTimeString() + '<br>' +  
+ 								'dzień tygodnia: ' + today.getPolishDays() + '<br>' +
+ 								'miesiąc: ' + today.getPolishMonth() + '<br>' +
+ 								'rok: ' + today.getFullYear() + '<br>' +
+ 								'od moich narodzin upłyneło: ' + lifeTime(birthDate, today) + ' dni';
 
 }; //end of widdow.onload
 
