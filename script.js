@@ -379,7 +379,7 @@ window.onload = function() {
 
 //ZADANIE 11
  	const exercise11Content = document.getElementById('exercise11Content');
-
+ 	const exercise11Clock = document.getElementById('exercise11Clock');
  	const today = new Date();
  	const birthDate = new Date('09/04/1987');
 
@@ -414,8 +414,34 @@ window.onload = function() {
  	function lifeTime(birth, now) {
  		return parseInt((now - birth)/1000/60/60/24); //dni
  	};
+
+ 	function Clock(handler) {
+
+ 		this.handler = handler;
+
+ 		this.actualDate = new Date();
+
+ 		this.clockRunning = function() {
+ 			this.actualDate = new Date();
+ 		};
+
+ 		this.refreshDisplayClock = function() {
+ 			this.handler.innerHTML = 'aktualny czas: ' + this.actualDate.toLocaleTimeString();
+ 		};
+ 		this.start = function() {
+ 			this.refreshDisplayClock();
+ 			const self = this;
+ 			setInterval(function() {
+ 				self.refreshDisplayClock();
+ 				self.clockRunning();
+
+ 			}, 1000);
+ 		};
+ 	};
+ 	const clock = new Clock(exercise11Clock);
+ 	clock.start();
+ 	
  	exercise11Content.innerHTML =
- 								'czas rozpoczęcia wizyty: ' + today.toLocaleTimeString() + '<br>' +  
  								'dzień tygodnia: ' + today.getPolishDays() + '<br>' +
  								'miesiąc: ' + today.getPolishMonth() + '<br>' +
  								'rok: ' + today.getFullYear() + '<br>' +
