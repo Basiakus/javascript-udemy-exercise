@@ -416,17 +416,13 @@ window.onload = function() {
  	};
 
  	function Clock(handler) {
-
  		this.handler = handler;
-
  		this.actualDate = new Date();
-
  		this.clockRunning = function() {
  			this.actualDate = new Date();
  		};
-
  		this.refreshDisplayClock = function() {
- 			this.handler.innerHTML = 'aktualny czas: ' + this.actualDate.toLocaleTimeString();
+ 			this.handler.innerHTML = 'aktualny czas: ' + this.formattedTime();
  		};
  		this.start = function() {
  			this.refreshDisplayClock();
@@ -434,8 +430,29 @@ window.onload = function() {
  			setInterval(function() {
  				self.refreshDisplayClock();
  				self.clockRunning();
-
  			}, 1000);
+ 		};
+ 		this.formattedTime = function() {
+ 		let dayTime = '';	
+ 		let hours = this.actualDate.getHours();
+ 		let minutes = this.actualDate.getMinutes();
+ 		let seconds = this.actualDate.getSeconds();
+ 		if(hours < 12) {
+ 				dayTime = ' AM';
+ 			} else {
+ 				dayTime = ' PM';
+ 		};
+ 		if(hours < 10) {
+ 			hours = '0' + hours;
+ 		};
+ 		if(minutes < 10) {
+ 			minutes = '0' + minutes;
+ 		};
+ 		if(seconds < 10) {
+ 			seconds = '0' + seconds;
+ 		};
+
+ 		return hours + ':' + minutes + ':' + seconds + dayTime;
  		};
  	};
  	const clock = new Clock(exercise11Clock);
