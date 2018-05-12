@@ -389,7 +389,7 @@ window.onload = function() {
 					  'Wtorek', 
 					  'Środa', 
 				      'Czwartek', 
-					  'Piatek',
+					  'Piątek',
 					  'Sobota'
 		];
 		return days[this.getDay()];
@@ -411,8 +411,8 @@ window.onload = function() {
  		];
  		return months[this.getMonth()];
  	};
- 	function lifeTime(birth, now) {
- 		return parseInt((now - birth)/1000/60/60/24); //dni
+ 	function lifeTime(from, now) {
+ 		return parseInt((now - from)/1000/60/60/24); //dni
  	};
 
  	function Clock(handler) {
@@ -432,7 +432,9 @@ window.onload = function() {
  				self.clockRunning();
  			}, 1000);
  		};
- 		this.formattedTime = function() {
+ 	};
+
+ 	Clock.prototype.formattedTime = function() {
  		let dayTime = '';	
  		let hours = this.actualDate.getHours();
  		let minutes = this.actualDate.getMinutes();
@@ -451,10 +453,9 @@ window.onload = function() {
  		if(seconds < 10) {
  			seconds = '0' + seconds;
  		};
-
  		return hours + ':' + minutes + ':' + seconds + dayTime;
- 		};
  	};
+
  	const clock = new Clock(exercise11Clock);
  	clock.start();
  	
@@ -464,12 +465,21 @@ window.onload = function() {
  								'rok: ' + today.getFullYear() + '<br>' +
  								'od moich narodzin upłyneło: ' + lifeTime(birthDate, today) + ' dni';
 
+
+// ZADANIE 12
+	const exercise12CookieCreate = document.getElementById('exercise12CookieCreate');
+	const exercise12Display = document.getElementById('exercise12Display');
+
+	exercise12CookieCreate.addEventListener('click', function() {
+		document.cookie = "ciasteczko=pyszne; max-age=60; path=/";
+		alert('ciasteczko zostało stworzone :)');
+	});
+
 }; //end of widdow.onload
 
 
 
 	
-
 
 	
 
