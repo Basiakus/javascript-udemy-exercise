@@ -442,6 +442,7 @@ window.onload = function() {
  		if(hours < 12) {
  				dayTime = ' AM';
  			} else {
+ 				hours -= 12;
  				dayTime = ' PM';
  		};
  		if(hours < 10) {
@@ -471,7 +472,7 @@ window.onload = function() {
 	const exercise12Display = document.getElementById('exercise12Display');
 
 	exercise12CookieCreate.addEventListener('click', function() {
-		document.cookie = "ciasteczko=pyszne; max-age=60; path=/";
+		document.cookie = "ciasteczko=pyszne; konsumpcja=minuta; max-age=60; path=/";
 		alert('ciasteczko zostało stworzone :)');
 	});
 
