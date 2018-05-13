@@ -472,7 +472,8 @@ window.onload = function() {
 	const exercise12Display = document.getElementById('exercise12Display');
 
 	exercise12CookieCreate.addEventListener('click', function() {
-		document.cookie = "ciasteczko=pyszne; konsumpcja=minuta; max-age=60; path=/";
+		document.cookie = "ciasteczko=pyszne; max-age=60; path=/";
+		document.cookie = "czas_konsumpcji=minuta; max-age=60; path=/";
 		alert('ciasteczko zostało stworzone :)');
 	});
 
