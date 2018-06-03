@@ -480,13 +480,13 @@ window.onload = function() {
 	*/
 	function createCookie(name, value) {
 		document.cookie = name + '=' + value + '; max-age=60; path=/';
-		alert("nazwa: " + name.value + " , wartość: " + value.value);
 	};
 	exercise12CookieCreate.addEventListener('click', function(e) {
 		e.preventDefault();
 		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
 		const exercise12CookieValue = document.getElementById('exercise12CookieValue').value;
 		createCookie(exercise12CookieName, exercise12CookieValue);
+		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue);
 
 	});
 
