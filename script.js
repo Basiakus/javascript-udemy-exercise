@@ -479,8 +479,8 @@ window.onload = function() {
 	});
 	*/
 	function createCookie(name, value) {
-		document.cookie = name + '=' + value + '; max-age=60; path=/';
-		alert(name.value + " , " + value.value);
+		document.cookie = name.toUTCString() + '=' + value.toUTCString() + '; max-age=60; path=/';
+		alert("nazwa: " + name.value + " , wartość: " + value.value);
 	};
 	exercise12CookieCreate.addEventListener('click', function(e) {
 		e.preventDefault();
