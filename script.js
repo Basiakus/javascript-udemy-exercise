@@ -468,13 +468,25 @@ window.onload = function() {
 
 
 // ZADANIE 12
+	
 	const exercise12CookieCreate = document.getElementById('exercise12CookieCreate');
-	const exercise12Display = document.getElementById('exercise12Display');
 
+	/*
 	exercise12CookieCreate.addEventListener('click', function() {
 		document.cookie = "ciasteczko=pyszne; max-age=60; path=/";
 		document.cookie = "czas_konsumpcji=minuta; max-age=60; path=/";
 		alert('ciasteczko zostało stworzone :)');
+	});
+	*/
+	function createCookie(name, value) {
+		document.cookie = name + '=' + value + '; max-age=60; path=/';
+		alert(name.value + " , " + value.value);
+	};
+	exercise12CookieCreate.addEventListener('click', function() {
+		const exercise12CookieName = document.getElementById('exercise12CookieName');
+		const exercise12CookieValue = document.getElementById('exercise12CookieValue');
+		createCookie(exercise12CookieName, exercise12CookieValue);
+
 	});
 
 }; //end of widdow.onload
