@@ -482,7 +482,8 @@ window.onload = function() {
 		document.cookie = name + '=' + value + '; max-age=60; path=/';
 		alert(name.value + " , " + value.value);
 	};
-	exercise12CookieCreate.addEventListener('click', function() {
+	exercise12CookieCreate.addEventListener('click', function(e) {
+		e.preventDefault();
 		const exercise12CookieName = document.getElementById('exercise12CookieName');
 		const exercise12CookieValue = document.getElementById('exercise12CookieValue');
 		createCookie(exercise12CookieName, exercise12CookieValue);
