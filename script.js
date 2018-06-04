@@ -470,6 +470,7 @@ window.onload = function() {
 // ZADANIE 12
 	
 	const exercise12CookieCreate = document.getElementById('exercise12CookieCreate');
+	const exercise12CookieDelete = document.getElementById('exercise12CookieDelete');
 
 	/*
 	exercise12CookieCreate.addEventListener('click', function() {
@@ -489,6 +490,12 @@ window.onload = function() {
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue);
 
 	});
+	exercise12CookieDelete.addEventListener('click', function(e) {
+		e.preventDefault();
+		document.cookie[0] = '' + '=' + '' + '; max-age=0; path=/';
+		alert('pierwsze ciasteczko zostało usunięte');
+	});
+
 
 }; //end of widdow.onload
 
