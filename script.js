@@ -493,7 +493,8 @@ window.onload = function() {
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
 		const expiresDate = new Date();
-		document.cookie[0] = 'max-age=0 ;path=/';
+		expiresDate.setDate(expiresDate.getDate()-1);
+		document.cookie[0] = 'expires=' + expiresDate.toUTCString() + ';path=/';
 		alert('pierwsze ciasteczko zostało usunięte');
 	});
 
