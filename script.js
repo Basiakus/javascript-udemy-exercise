@@ -494,7 +494,7 @@ window.onload = function() {
 		e.preventDefault();
 		const expiresDate = new Date();
 		expiresDate.setDate(expiresDate.getDate()-1);
-		document.cookie[0] = 'expires='+expiresDate.toUTCString()+';path=/';
+		document.cookie[0] = '=;expires='+expiresDate.toUTCString()+';path=/';
 		alert('pierwsze ciasteczko zostało usunięte');
 	});
 
