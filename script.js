@@ -482,6 +482,11 @@ window.onload = function() {
 	function createCookie(name, value) {
 		document.cookie = name + '=' + value + '; max-age=60; path=/';
 	};
+	function deleteCookie(name) {
+		const expiresDate = new Date();
+		expiresDate.setDate(expiresDate.getDate()-1);
+		document.cookie = name+'=;expires='+expiresDate.toUTCString()+';path=/';
+	};
 	exercise12CookieCreate.addEventListener('click', function(e) {
 		e.preventDefault();
 		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
@@ -492,9 +497,8 @@ window.onload = function() {
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
-		const expiresDate = new Date();
-		expiresDate.setDate(expiresDate.getDate()-1);
-		document.cookie[0] = '=;expires='+expiresDate.toUTCString()+';path=/';
+		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
+		deleteCookie(exercise12CookieName);
 		alert('pierwsze ciasteczko zostało usunięte');
 	});
 
