@@ -492,7 +492,8 @@ window.onload = function() {
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
-		document.cookie[0] = '' + '=' + '' + '; max-age=0; path=/';
+		const expiresDate = new Date();
+		document.cookie[0] = 'max-age=0 ;path=/';
 		alert('pierwsze ciasteczko zostało usunięte');
 	});
 
