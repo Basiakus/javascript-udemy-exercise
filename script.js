@@ -505,14 +505,13 @@ window.onload = function() {
 		alert('ciasteczko o danej nazwie zostało usunięte');
 	});
 	exercise12CookieShow.addEventListener('click', function() {
-		var self = this;
-		this.cookies = document.cookie.split('; ');
+		const cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
-		for (let i = 0; i < this.cookies.length; i++) {
-			if(self.cookies.length == 0) {
+		for (let i = 0; i < cookies.length; i++) {
+			if(i == 0) {
 				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
-				exercise12CookieList.innerHTML += i + 1 + '. ' + this.cookies[i] + '<br>';
+				exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
 			};
 		};
 	});
