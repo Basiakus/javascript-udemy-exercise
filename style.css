@@ -160,8 +160,12 @@ Zadanie 12
 	display: inline-block;
 	min-width: 30%;
 }
-#createCookieForm span input {
-
+#exercise12CookieList {
+	margin: 0 auto;
+	border-radius: 5px;
+	width: 90%;
+	min-height: 50px;
+	border: 1px solid black;
 }
 
 

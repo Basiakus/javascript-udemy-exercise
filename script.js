@@ -471,7 +471,8 @@ window.onload = function() {
 	
 	const exercise12CookieCreate = document.getElementById('exercise12CookieCreate');
 	const exercise12CookieDelete = document.getElementById('exercise12CookieDelete');
-
+	const exercise12CookieShow = document.getElementById('exercise12CookieShow');
+	const exercise12CookieList = document.getElementById('exercise12CookieList');
 	/*
 	exercise12CookieCreate.addEventListener('click', function() {
 		document.cookie = "ciasteczko=pyszne; max-age=60; path=/";
@@ -500,6 +501,9 @@ window.onload = function() {
 		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
 		deleteCookie(exercise12CookieName);
 		alert('pierwsze ciasteczko zostało usunięte');
+	});
+	exercise12CookieShow.addEventListener('click', function() {
+		exercise12CookieList.innerHTML = document.cookie[0];
 	});
 
 
