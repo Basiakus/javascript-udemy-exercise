@@ -490,9 +490,9 @@ window.onload = function() {
 	};
 	exercise12CookieCreate.addEventListener('click', function(e) {
 		e.preventDefault();
-		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
-		const exercise12CookieValue = document.getElementById('exercise12CookieValue').value;
-		const exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
+		let exercise12CookieName = document.getElementById('exercise12CookieName').value;
+		let exercise12CookieValue = document.getElementById('exercise12CookieValue').value;
+		let exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
 		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
 		exercise12CookieName, exercise12CookieValue, exercise12CookieLife = ' ';
@@ -508,8 +508,12 @@ window.onload = function() {
 		const cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < cookies.length; i++) {
-			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
-		}
+			if() {
+				exercise12CookieList.innerHTML = 'List of cookies is empty';
+			} else {
+				exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
+			};
+		};
 	});
 
 
