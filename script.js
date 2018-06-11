@@ -495,18 +495,19 @@ window.onload = function() {
 		const exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
 		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
+		exercise12CookieName, exercise12CookieValue, exercise12CookieLife = '';
 
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
 		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
 		deleteCookie(exercise12CookieName);
-		alert('pierwsze ciasteczko zostało usunięte');
+		alert('ciasteczko o danej nazwie zostało usunięte');
 	});
 	exercise12CookieShow.addEventListener('click', function() {
 		const cookies = document.cookie.split('; ');
 		for (let i = 0; i < cookies.length; i++) {
-			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
+			exercise12CookieList.innerHTML = i + 1 + '. ' + cookies[i] + '<br>';
 		}
 	});
 
