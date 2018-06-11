@@ -495,8 +495,9 @@ window.onload = function() {
 		let exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
 		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
-		return exercise12CookieName, exercise12CookieValue, exercise12CookieLife = ' ';
-
+		exercise12CookieName = ' '; 
+		exercise12CookieValue = ' ';
+		exercise12CookieLife = ' ';
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
