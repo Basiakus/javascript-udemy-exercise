@@ -508,11 +508,11 @@ window.onload = function() {
 		var self = this;
 		this.cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
-		for (let i = 0; i < cookies.length; i++) {
-			if(!this.cookies.length) {
+		for (let i = 0; i < this.cookies.length; i++) {
+			if(!self.cookies.length) {
 				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
-				exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
+				exercise12CookieList.innerHTML += i + 1 + '. ' + this.cookies[i] + '<br>';
 			};
 		};
 	});
