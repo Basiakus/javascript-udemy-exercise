@@ -495,7 +495,7 @@ window.onload = function() {
 		const exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
 		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
-		exercise12CookieName, exercise12CookieValue, exercise12CookieLife = '';
+		exercise12CookieName, exercise12CookieValue, exercise12CookieLife = ' ';
 
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
@@ -506,8 +506,9 @@ window.onload = function() {
 	});
 	exercise12CookieShow.addEventListener('click', function() {
 		const cookies = document.cookie.split('; ');
+		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < cookies.length; i++) {
-			exercise12CookieList.innerHTML = i + 1 + '. ' + cookies[i] + '<br>';
+			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
 		}
 	});
 
