@@ -517,7 +517,7 @@ window.onload = function() {
 	});
 
 
-}; //end of widdow.onload
+}; // end of widdow.onload
 
 
 
