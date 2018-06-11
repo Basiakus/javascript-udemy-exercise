@@ -505,9 +505,8 @@ window.onload = function() {
 	exercise12CookieShow.addEventListener('click', function() {
 		const cookies = document.cookie.split('; ');
 		for (let i = 0; i < cookies.length; i++) {
-			exercise12CookieList.innerHTML += i + '. ' + cookies[i] + '<br>';
+			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
 		}
-		return exercise12CookieList.innerHTML;
 	});
 
 
