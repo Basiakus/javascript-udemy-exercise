@@ -138,11 +138,12 @@
 		<form id="createCookieForm">
 			<fieldset>
 				<legend>Create Cookie</legend>
-				<span><p>Nazwa: </p><input name="createCookie" type="text" id="exercise12CookieName"></span>
-				<span><p>Wartość: </p><input name="cookieValue" type="text" id="exercise12CookieValue"></span>
+				<span><p>Name: </p><input name="createCookie" type="text" id="exercise12CookieName"></span>
+				<span><p>Value: </p><input name="cookieValue" type="text" id="exercise12CookieValue"></span>
+				<span><p>Duration(s.): </p><input maxlength="4" name="cookieLiveTime" type="text" id="exercise12CookieLife"></span>
 				<div id="exercise12CookieList"></div>
 				<input id='exercise12CookieCreate' type="submit" value='create cookie'>
-				<input id='exercise12CookieDelete' type="submit" value='delete cookie'>
+				<input id='exercise12CookieDelete' type="submit" value='delete cookie by value'>
 				<input id="exercise12CookieShow" type="button" value="show cookies">
 			</fieldset>
 		</form>

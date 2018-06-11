@@ -480,8 +480,8 @@ window.onload = function() {
 		alert('ciasteczko zostało stworzone :)');
 	});
 	*/
-	function createCookie(name, value) {
-		document.cookie = name + '=' + value + '; max-age=60; path=/';
+	function createCookie(name, value, time) {
+		document.cookie = name + '=' + value + '; max-age=' + time + '; path=/';
 	};
 	function deleteCookie(name) {
 		const expiresDate = new Date();
@@ -492,8 +492,9 @@ window.onload = function() {
 		e.preventDefault();
 		const exercise12CookieName = document.getElementById('exercise12CookieName').value;
 		const exercise12CookieValue = document.getElementById('exercise12CookieValue').value;
-		createCookie(exercise12CookieName, exercise12CookieValue);
-		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue);
+		const exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
+		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
+		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
 
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
