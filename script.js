@@ -509,9 +509,9 @@ window.onload = function() {
 		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < cookies.length; i++) {
 			if(cookies.length == null) {
-			return	exercise12CookieList.innerHTML = 'List of cookies is empty';
+			exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
-			return	exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
+			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
 			};
 		};
 	});
