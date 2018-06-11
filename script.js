@@ -505,10 +505,11 @@ window.onload = function() {
 		alert('ciasteczko o danej nazwie zostało usunięte');
 	});
 	exercise12CookieShow.addEventListener('click', function() {
-		const cookies = document.cookie.split('; ');
+		var self = this;
+		this.cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < cookies.length; i++) {
-			if(!cookies.length) {
+			if(!this.cookies.length) {
 				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
 				exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
