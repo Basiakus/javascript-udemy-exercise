@@ -508,7 +508,7 @@ window.onload = function() {
 		const cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < cookies.length; i++) {
-			if() {
+			if(!cookies.length) {
 				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
 				exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
