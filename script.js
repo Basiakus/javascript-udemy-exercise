@@ -503,7 +503,9 @@ window.onload = function() {
 		alert('pierwsze ciasteczko zostało usunięte');
 	});
 	exercise12CookieShow.addEventListener('click', function() {
-		exercise12CookieList.innerHTML = document.cookie[0];
+		for (let i = 0; i < document.cookie.length; i++) {
+			exercise12CookieList.innerHTML = document.cookie[i];
+		}
 	});
 
 
