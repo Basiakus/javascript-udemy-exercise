@@ -507,13 +507,14 @@ window.onload = function() {
 	exercise12CookieShow.addEventListener('click', function() {
 		const cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
-		for (let i = 0; i < cookies.length; i++) {
+
 			if(cookies.length[0] == null) {
-			exercise12CookieList.innerHTML = 'List of cookies is empty';
+				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
-			exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
-			};
-		};
+				for (let i = 0; i < cookies.length; i++) {
+					exercise12CookieList.innerHTML += i + 1 + '. ' + cookies[i] + '<br>';
+				};
+			}
 	});
 
 
