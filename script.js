@@ -509,7 +509,7 @@ window.onload = function() {
 		this.cookies = document.cookie.split('; ');
 		exercise12CookieList.innerHTML = ' ';
 		for (let i = 0; i < this.cookies.length; i++) {
-			if(!self.cookies.length) {
+			if(self.cookies.length == 0) {
 				exercise12CookieList.innerHTML = 'List of cookies is empty';
 			} else {
 				exercise12CookieList.innerHTML += i + 1 + '. ' + this.cookies[i] + '<br>';
