@@ -495,9 +495,9 @@ window.onload = function() {
 		let exercise12CookieLife = document.getElementById('exercise12CookieLife').value;
 		createCookie(exercise12CookieName, exercise12CookieValue, exercise12CookieLife);
 		alert("nazwa: " + exercise12CookieName + " , wartość: " + exercise12CookieValue + ", czas: " + exercise12CookieLife + ' s.');
-		exercise12CookieName = ' '; 
-		exercise12CookieValue = ' ';
-		exercise12CookieLife = ' ';
+		exercise12CookieName = ''; 
+		exercise12CookieValue = '';
+		exercise12CookieLife = '';
 	});
 	exercise12CookieDelete.addEventListener('click', function(e) {
 		e.preventDefault();
@@ -518,7 +518,24 @@ window.onload = function() {
 			}
 	});
 
+// Zadanie 13
 
+	const exercise13 = document.getElementById('exercise13');
+	const divsInExercise13 = exercise13.getElementsByTagName('div');
+
+	/*for (let i = 0; i < divsInExercise13.length; i++) {
+		console.log(divsInExercise13[i]);
+	};
+
+	console.log(divsInExercise13.length);
+	*/
+	divsInExercise13[0].setAttribute('class', 'change');
+	let i = 0;
+		setInterval(function() {
+			divsInExercise13[i % divsInExercise13.length].setAttribute('class', '');
+			divsInExercise13[(i + 1) % divsInExercise13.length].setAttribute('class', 'change');
+			i++;
+		}, 1500);
 }; // end of widdow.onload
 
 

@@ -170,5 +170,16 @@ Zadanie 12
 	min-height: 50px;
 	border: 1px solid black;
 }
-
-
+/*
+Zadanie 13
+*/
+div#exercise13 {
+	position: relative;
+}
+#exercise13>div {
+	display: none;
+	position: absolute;
+}
+#exercise13>div.change {
+	display: inline-block;
+}
