@@ -558,15 +558,33 @@ window.onload = function() {
 	exercise14NewImage.src = exercise14currentMiniature.getAttribute('src');  
 
 	for (i = 0; i < exercise14Miniatures.length; i++) {
-	   exercise14Miniatures[i].onmouseover = function() {
-	      
+	   exercise14Miniatures[i].addEventListener('mouseover', function() {
 	      exercise14currentMiniature.className = exercise14currentMiniature.className.replace('selected', ' ');
 	      exercise14currentMiniature = this;
 	      exercise14currentMiniature.className += ' selected';
 	      exercise14NewImage.src = this.getAttribute('src');  
 	      
-	   };
+	   });
 	};
+	function createTooltipInExercise14() {
+		const tooltipObjects = document.getElementsByClassName('tooltip');
+		const tooltipContainer = document.createElement('div');
+		tooltipContainer.id = 'tooltipContainer';
+		document.body.appendChild(tooltipContainer);
+		for (i = 0; i < tooltipObjects.length; i++) {
+			tooltipObjects[i].addEventListener('mousemove', function(e) {
+				tooltipContainer.style.display = 'inline-block';
+				tooltipContainer.innerHTML = this.title;
+				tooltipContainer.style.left = e.clientX + document.documentElement.scrollLeft + 15 + 'px';
+				tooltipContainer.style.top = e.clientY + document.documentElement.scrollTop + (-25) +'px';
+			});
+			tooltipObjects[i].addEventListener('mouseout', function(e) {
+				tooltipContainer.style.display = 'none';
+			});
+		};
+	};
+	createTooltipInExercise14();
+	
 
 }; // end of widdow.onload
 
