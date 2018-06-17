@@ -198,6 +198,7 @@ Zadanie 14
 #exercise14 img.miniature {
    width: 100px;
    height: 100px;
+   filter: blur(1px) grayscale(100%);
 }
 #exercise14 img.miniature:hover {
    border: 4px solid purple;
@@ -205,11 +206,12 @@ Zadanie 14
    transition: .3s;
    border-radius: 3px;
 }
-#exercise14.selected {
+#exercise14 img.selected {
    border: 4px solid purple;
    margin: -4px;
    transition: .3s;
    border-radius: 3px;
+   filter: none;
 }
 #tooltipContainer {
 	position: absolute;
@@ -222,7 +224,8 @@ Zadanie 14
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 10px;
-
+	opacity: 0;
+	transition: opacity 0.3s;
 }
 
 

@@ -559,7 +559,7 @@ window.onload = function() {
 
 	for (i = 0; i < exercise14Miniatures.length; i++) {
 	   exercise14Miniatures[i].addEventListener('mouseover', function() {
-	      exercise14currentMiniature.className = exercise14currentMiniature.className.replace('selected', ' ');
+	      exercise14currentMiniature.className = exercise14currentMiniature.className.replace('selected', '');
 	      exercise14currentMiniature = this;
 	      exercise14currentMiniature.className += ' selected';
 	      exercise14NewImage.src = this.getAttribute('src');  
@@ -571,15 +571,26 @@ window.onload = function() {
 		const tooltipContainer = document.createElement('div');
 		tooltipContainer.id = 'tooltipContainer';
 		document.body.appendChild(tooltipContainer);
+
+		const tmpTitles = [];
+
 		for (i = 0; i < tooltipObjects.length; i++) {
-			tooltipObjects[i].addEventListener('mousemove', function(e) {
-				tooltipContainer.style.display = 'inline-block';
+
+			tmpTitles[i] = tooltipObjects[i].title;
+
+			tooltipObjects[i].tmp_id = i;
+
+			tooltipObjects[i].addEventListener('mouseover', function(e) {
+				tooltipContainer.style.opacity = '1';
 				tooltipContainer.innerHTML = this.title;
+				this.title = "";
 				tooltipContainer.style.left = e.clientX + document.documentElement.scrollLeft + 15 + 'px';
 				tooltipContainer.style.top = e.clientY + document.documentElement.scrollTop + (-25) +'px';
 			});
+
 			tooltipObjects[i].addEventListener('mouseout', function(e) {
-				tooltipContainer.style.display = 'none';
+				this.title = tmpTitles[this.tmp_id];
+				tooltipContainer.style.opacity = '0';
 			});
 		};
 	};
