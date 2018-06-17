@@ -522,6 +522,8 @@ window.onload = function() {
 
 	const exercise13 = document.getElementById('exercise13');
 	const divsInExercise13 = exercise13.getElementsByTagName('div');
+	const exercise13Start = document.getElementById('exercise13Start');
+	const exercise13Stop = document.getElementById('exercise13Stop');
 
 	/*for (let i = 0; i < divsInExercise13.length; i++) {
 		console.log(divsInExercise13[i]);
@@ -529,13 +531,43 @@ window.onload = function() {
 
 	console.log(divsInExercise13.length);
 	*/
-	divsInExercise13[0].setAttribute('class', 'change');
+	
 	let i = 0;
-		setInterval(function() {
+		exercise13Start.onclick = function() {
+			divsInExercise13[0].setAttribute('class', 'change');
+			const exercise13Interval = setInterval(function() {
 			divsInExercise13[i % divsInExercise13.length].setAttribute('class', '');
 			divsInExercise13[(i + 1) % divsInExercise13.length].setAttribute('class', 'change');
 			i++;
 		}, 1500);
+			exercise13Stop.onclick = function() {
+				clearInterval(exercise13Interval);
+			};
+		};
+
+	// Zadanie 14 
+
+	const exercise14MainImg = document.getElementById('exercise14MainImg');
+	const exercise14Miniatures = document.getElementsByClassName('miniature');
+	const exercise14NewImage = new Image();
+	let exercise14currentMiniature = exercise14Miniatures[3];
+
+	exercise14MainImg.appendChild(exercise14NewImage);
+
+	exercise14currentMiniature.className += ' selected';
+	exercise14NewImage.src = exercise14currentMiniature.getAttribute('src');  
+
+	for (i = 0; i < exercise14Miniatures.length; i++) {
+	   exercise14Miniatures[i].onmouseover = function() {
+	      
+	      exercise14currentMiniature.className = exercise14currentMiniature.className.replace('selected', ' ');
+	      exercise14currentMiniature = this;
+	      exercise14currentMiniature.className += ' selected';
+	      exercise14NewImage.src = this.getAttribute('src');  
+	      
+	   };
+	};
+
 }; // end of widdow.onload
 
 

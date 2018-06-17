@@ -177,9 +177,36 @@ div#exercise13 {
 	position: relative;
 }
 #exercise13>div {
-	display: none;
+	opacity: 0;
 	position: absolute;
+	left: 50%;
+	transition:  1.5s;
 }
 #exercise13>div.change {
-	display: inline-block;
+	opacity: 1;
 }
+#exercise13 button {
+	margin-top: 3%;
+}
+/*
+Zadanie 14
+*/
+#exercise14MainImg img {
+	width: 400px;
+	height: 300px;
+}
+#exercise14 img.miniature {
+   width: 100px;
+   height: 100px;
+}
+#exercise14 img.miniature:hover {
+   border: 2px solid purple;
+   margin: -2px;
+}
+.selected {
+   border: 2px solid purple;
+   margin: -2px;
+}
+
+
+
