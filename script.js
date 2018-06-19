@@ -544,7 +544,7 @@ window.onload = function() {
 				clearInterval(exercise13Interval);
 			};
 		};
-
+		//console.dir(divsInExercise13);
 	// Zadanie 14 
 
 	const exercise14MainImg = document.getElementById('exercise14MainImg');
@@ -585,7 +585,7 @@ window.onload = function() {
 				tooltipContainer.innerHTML = this.title;
 				this.title = "";
 				tooltipContainer.style.left = e.clientX + document.documentElement.scrollLeft + 15 + 'px';
-				tooltipContainer.style.top = e.clientY + document.documentElement.scrollTop + (-25) +'px';
+				tooltipContainer.style.top = e.clientY + document.documentElement.scrollTop - 25 +'px';
 			});
 
 			tooltipObjects[i].addEventListener('mouseout', function(e) {
